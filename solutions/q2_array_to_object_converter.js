@@ -4,15 +4,15 @@
 
 const convert = (arr, field) => {
 	// Write your code here
-
 	// var finalObj = {};
 	// arr.forEach(item => {
 	// 	finalObj[item[field]]=item;
 	// });
 	// console.log(finalObj);
+	
 	try{
 		return arr.reduce((obj, item) => {
-			return {...obj, [item[field]]: item, };
+			return { ...obj, [item[field]]: item };
 		}, {});
 	} catch(err){
 		return null;

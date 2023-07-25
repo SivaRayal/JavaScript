@@ -1,3 +1,5 @@
+/* eslint-disable operator-assignment */
+/* eslint-disable no-console */
 // Create a list of fruits with their properties (name, color, pricePerKg)
 // and convert it into a format so that for a given fruit name
 // retrieval of its color and pricePerKg value is fast
@@ -11,50 +13,49 @@
 // const fetch = require('node-fetch');
 
 
-
 class Fruits {
-    constructor(name,color,pricePerKg){
-        this.name=name;
-        this.color=color;
-        this.pricePerKg=pricePerKg;
+    constructor(name,color,pricePerKg) {
+        this.name = name;
+        this.color = color;
+        this.pricePerKg = pricePerKg;
     }
 }
 
 const fruitFinder = (fruitName) => {
-    // // fetch('..\resources\FruitsData.json')
-    // fetch('http://localhost:3000/Fruits',{"method":"GET"})
+    // fetch('..\resources\FruitsData.json')
+    // fetch('http://localhost:3000/Fruits',{method: 'GET'})
     //     .then(res => { return res.json()})
     //     .then(data => {  
-    //         var outData=""; 
+    //         let outData = '';
     //         // console.log(data);
     //         data.forEach(item => {
-    //             if(item.name === fruitName){
-    //                 outData+=item.color+" "+item.name+" "+item.pricePerKg+"\n";
+    //             if(item.name === fruitName) {
+    //                 outData += item.color + ' ' + item.name + ' ' + item.pricePerKg + '\n';
     //             }
-    //         })
-    //         console.log(outData);
-    //         return outData;
+    //         });
+    //         console.table(outData);
+    //         // return outData;
     //     })
-    //     .catch( err => {
-    //         console.log("Caught error - Fruit not found !!");
-    //     })
+    //     .catch(err => {
+    //         console.error(err);
+    //         console.log('Caught error - Fruit not found !!');
+    //     });
 
-    var fruitData=[];
-    fruitData.push(new Fruits("Apple","Red",250));
-    fruitData.push(new Fruits("Apple","Green",300));
-    fruitData.push(new Fruits("Mango","Green",150));
-    fruitData.push(new Fruits("Mango","Yellow",300));
-    fruitData.push(new Fruits("Banana","Green",50));
-    fruitData.push(new Fruits("Banana","Yellow",70));
-    fruitData.push(new Fruits("Banana","Red",100));
-    fruitData.push(new Fruits("Orange","Orange",120));
-    fruitData.push(new Fruits("Grapes","Black",90));
+    const fruitData = [];
+    fruitData.push(new Fruits('Apple','Red',250));
+    fruitData.push(new Fruits('Apple','Green',300));
+    fruitData.push(new Fruits('Mango','Green',150));
+    fruitData.push(new Fruits('Mango','Yellow',300));
+    fruitData.push(new Fruits('Banana','Green',50));
+    fruitData.push(new Fruits('Banana','Yellow',70));
+    fruitData.push(new Fruits('Banana','Red',100));
+    fruitData.push(new Fruits('Orange','Orange',120));
+    fruitData.push(new Fruits('Grapes','Black',90));
 
-    var outData = fruitData.filter(fruit=>fruit.name.toLowerCase() === fruitName.toLowerCase());
+    let outData = fruitData.filter(fruit=>fruit.name.toLowerCase() === fruitName.toLowerCase());
     // console.log(outData);
     return outData;
-        
 };
 
 // fruitFinder("Apple");
-console.log(fruitFinder("Banana"));
+console.table(fruitFinder('Banana'));
