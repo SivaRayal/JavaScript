@@ -1,3 +1,4 @@
+# JavaScriptBasicsAssignment
 ## Problem Instructions
 
 1.  You are given five problems in this assignment to solve which shall be available in `./solutions` directory  
