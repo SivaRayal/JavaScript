@@ -1,4 +1,6 @@
 # JavaScriptBasicsAssignment Solution Submission by SIVA SAI KRISHNA K 
+Author - Siva Kuruva.   
+Email - kuruva.siva8055@gmail.com
 
 ## Problem Instructions
 1.  You are given five problems in this assignment to solve which shall be available in `./solutions` directory  
