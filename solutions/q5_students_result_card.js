@@ -24,48 +24,49 @@ class Reports {
         this.finalPercentage = finalPercentage;
     }
 }
+
 function getPercentage(sub1, sub2) {
     return parseFloat(((sub1 + sub2) / 200 * 100).toPrecision(3));
-  }
+}
 
 const ReportCards = () => {
-//   var reportCardData = [];
-//   fetch("../resources/StudentsReports.json")
-//     // fetch('http://localhost:3000/Fruits',{"method":"GET"})
-//     .then((res) => {
-//       return res.json();
-//     })
-//     .then((Students) => {
-//       // console.log(data);
+    //   var reportCardData = [];
+    //   fetch("../resources/StudentsReports.json")
+    // // fetch('http://localhost:3000/Students',{"method":"GET"})
+    //     .then((res) => {
+    //       return res.json();
+    //     })
+    //     .then((Students) => {
+    //       // console.log(data);
 
-//       for (var key in Students) {
-//         var student = Students[key];
-//         const studentCard = new Object();
-//         if (
-//           student.Subjects.hasOwnProperty("Accounts") &&
-//           student.Subjects.hasOwnProperty("Accounts")
-//         ) {
-//           studentCard.name = student.Name;
-//           studentCard.percentage = getPercentage(
-//             student.Subjects.Accounts,
-//             student.Subjects.Grammer
-//           );
-//           reportCardData.push(studentCard);
-//         } else {
-//           studentCard.name = student.Name;
-//           studentCard.percentage = getPercentage(
-//             student.Subjects.Physics,
-//             student.Subjects.Grammer
-//           );
-//           reportCardData.push(studentCard);
-//         }
-//       }
-//     })
-//     .catch((err) => {
-//       console.log("Caught error - Students data not found !!");
-//     });
+    //       for (var key in Students) {
+    //         var student = Students[key];
+    //         const studentCard = new Object();
+    //         if (
+    //           student.Subjects.hasOwnProperty("Accounts") &&
+    //           student.Subjects.hasOwnProperty("Accounts")
+    //         ) {
+    //           studentCard.name = student.Name;
+    //           studentCard.percentage = getPercentage(
+    //             student.Subjects.Accounts,
+    //             student.Subjects.Grammer
+    //           );
+    //           reportCardData.push(studentCard);
+    //         } else {
+    //           studentCard.name = student.Name;
+    //           studentCard.percentage = getPercentage(
+    //             student.Subjects.Physics,
+    //             student.Subjects.Grammer
+    //           );
+    //           reportCardData.push(studentCard);
+    //         }
+    //       }
+    //     })
+    //     .catch((err) => {
+    //       console.log("Caught error - Students data not found !!");
+    //     });
 
-  const StudentsJSON = JSON.parse(`{
+    const StudentsJSON = JSON.parse(`{
       "Students":[
           {
               "Name":"Eignstine",
@@ -151,21 +152,19 @@ const ReportCards = () => {
       ]
   }`);
 
-  let reportCardData = [];
-  for(let key in StudentsJSON.Students) {
-      if(StudentsJSON.Students[key].Subjects.hasOwnProperty('Accounts')
-      && StudentsJSON.Students[key].Subjects.hasOwnProperty('Grammer')) {
-        reportCardData.push(new Reports(StudentsJSON.Students[key].Name, getPercentage(StudentsJSON.Students[key].Subjects.Grammer, 0), '-', getPercentage(StudentsJSON.Students[key].Subjects.Accounts, 0), getPercentage(StudentsJSON.Students[key].Subjects.Accounts,
-            StudentsJSON.Students[key].Subjects.Grammer)));
-      }else{
-        reportCardData.push(new Reports(StudentsJSON.Students[key].Name, getPercentage(StudentsJSON.Students[key].Subjects.Grammer, 0), getPercentage(StudentsJSON.Students[key].Subjects.Physics, 0), '-', getPercentage(StudentsJSON.Students[key].Subjects.Physics,
-            StudentsJSON.Students[key].Subjects.Grammer)));
-      }
-  }
+    let reportCardData = [];
+    for (let key in StudentsJSON.Students) {
+        if (StudentsJSON.Students[key].Subjects.hasOwnProperty('Accounts') &&
+            StudentsJSON.Students[key].Subjects.hasOwnProperty('Grammer')) {
+            reportCardData.push(new Reports(StudentsJSON.Students[key].Name, getPercentage(StudentsJSON.Students[key].Subjects.Grammer, 0), '-', getPercentage(StudentsJSON.Students[key].Subjects.Accounts, 0), getPercentage(StudentsJSON.Students[key].Subjects.Accounts,
+                StudentsJSON.Students[key].Subjects.Grammer)));
+        } else {
+            reportCardData.push(new Reports(StudentsJSON.Students[key].Name, getPercentage(StudentsJSON.Students[key].Subjects.Grammer, 0), getPercentage(StudentsJSON.Students[key].Subjects.Physics, 0), '-', getPercentage(StudentsJSON.Students[key].Subjects.Physics,
+                StudentsJSON.Students[key].Subjects.Grammer)));
+        }
+    }
 
-  return reportCardData;
+    return reportCardData;
 };
 
 console.table(ReportCards());
-
-

@@ -14,7 +14,7 @@
 
 
 class Fruits {
-    constructor(name,color,pricePerKg) {
+    constructor(name, color, pricePerKg) {
         this.name = name;
         this.color = color;
         this.pricePerKg = pricePerKg;
@@ -42,17 +42,17 @@ const fruitFinder = (fruitName) => {
     //     });
 
     const fruitData = [];
-    fruitData.push(new Fruits('Apple','Red',250));
-    fruitData.push(new Fruits('Apple','Green',300));
-    fruitData.push(new Fruits('Mango','Green',150));
-    fruitData.push(new Fruits('Mango','Yellow',300));
-    fruitData.push(new Fruits('Banana','Green',50));
-    fruitData.push(new Fruits('Banana','Yellow',70));
-    fruitData.push(new Fruits('Banana','Red',100));
-    fruitData.push(new Fruits('Orange','Orange',120));
-    fruitData.push(new Fruits('Grapes','Black',90));
+    fruitData.push(new Fruits('Apple', 'Red', 250));
+    fruitData.push(new Fruits('Apple', 'Green', 300));
+    fruitData.push(new Fruits('Mango', 'Green', 150));
+    fruitData.push(new Fruits('Mango', 'Yellow', 300));
+    fruitData.push(new Fruits('Banana', 'Green', 50));
+    fruitData.push(new Fruits('Banana', 'Yellow', 70));
+    fruitData.push(new Fruits('Banana', 'Red', 100));
+    fruitData.push(new Fruits('Orange', 'Orange', 120));
+    fruitData.push(new Fruits('Grapes', 'Black', 90));
 
-    let outData = fruitData.filter(fruit=>fruit.name.toLowerCase() === fruitName.toLowerCase());
+    let outData = fruitData.filter(fruit => fruit.name.toLowerCase() === fruitName.toLowerCase());
     // console.log(outData);
     return outData;
 };
