@@ -1,4 +1,4 @@
-# JavaScriptBasicsAssignment Solution Submission by SIVA SAI KRISHNA K 
+# JavaScriptBasics Assignment Solution by SIVA SAI KRISHNA K 
 Author - Siva Kuruva.   
 Email - kuruva.siva8055@gmail.com
 
